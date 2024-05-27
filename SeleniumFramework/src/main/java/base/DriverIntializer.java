@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import util.PropertyReaderUtil;
 
 	public class DriverIntializer {
@@ -34,8 +35,9 @@ import util.PropertyReaderUtil;
 			
 			switch(browser){
 			case "Chrome":
-			   System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\main\\resources\\chromedriver.exe");
-			   System.out.println("chromepath"+System.getProperty("user.dir")+"\\src\\main\\resources\\chromedriver.exe");
+				WebDriverManager.chromedriver().setup();
+			  // System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\main\\resources\\chromedriver.exe");
+			  // System.out.println("chromepath"+System.getProperty("user.dir")+"\\src\\main\\resources\\chromedriver.exe");
 					   driver = new ChromeDriver();
 			   driver.manage().window().maximize();
 			   break;
