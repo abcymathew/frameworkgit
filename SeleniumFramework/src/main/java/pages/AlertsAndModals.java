@@ -2,33 +2,45 @@ package pages;
 
 	import org.openqa.selenium.By;
 	import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 	public class AlertsAndModals {
-		WebDriver driver ;
-		By bootstrapalert=By.xpath("//a[contains(text(),'Bootstrap Alert')]");
-		By bootstrapmodal=By.xpath("//a[contains(text(),'Bootstrap Modal')]");
-		By windowpopup=By.xpath("//a[contains(text(),'Window Popup')]");
-		By javascript=By.xpath("//a[contains(text(),'Javascript Alert')]");
-
-
-		public AlertsAndModals(WebDriver driver){
+		WebDriver driver; 
+		
+		public AlertsAndModals(WebDriver driver)
+		{
 			this. driver = driver;
+			PageFactory.initElements(driver, this);
 		}
 		
+		@FindBy(xpath="//a[contains(text(),'Bootstrap Alert')]")
+		 WebElement bootstrapalert;
+		
+		 @FindBy(xpath="//a[contains(text(),'Bootstrap Modal')]")
+		 WebElement bootstrapmodal;
+		 
+		 @FindBy(xpath="//a[contains(text(),'Window Popup')]")
+		 WebElement windowpopup;
+		
+		 @FindBy(xpath="//a[contains(text(),'Javascript Alert')]")
+		 WebElement  javascript;
+		
 		public void bootstrapalertclick(){
-			driver.findElement(bootstrapalert).click();
+			bootstrapalert.click();
 		}
 		
 		public void bootstrapmodalclick(){
-			driver.findElement(bootstrapmodal).click();
+			bootstrapmodal.click();
 		}
 		
 		public void windowpopupclick(){
-			driver.findElement(windowpopup).click();
+			windowpopup.click();
 		}
 		
 		public void javascriptclick(){
-			driver.findElement(javascript).click();
+			javascript.click();
 		}
 
 	}

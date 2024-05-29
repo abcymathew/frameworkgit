@@ -6,13 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class InputFormPage {
-	
-/*	By simpleForm=By.xpath("//a[@href='simple-form-demo.php' and @class='nav-link']");
-	By checkbox=By.xpath("//a[@href='check-box-demo.php']");
-	By radiobutton=By.xpath("//a[@href='radio-button-demo.php']");
-	By selectinput=By.xpath("//a[@href='select-input.php']");
-	By formsubmitlink=By.xpath("//a[@href='form-submit.php']");
-	By ajaxformsubmit=By.xpath("//a[@href='ajax-form-submit.php']");*/
 WebDriver driver;
     
 	public InputFormPage(WebDriver driver){
@@ -33,31 +26,25 @@ WebDriver driver;
    @FindBy(xpath="//a[@href='ajax-form-submit.php']")
 	WebElement ajaxformsubmit;
 	
-	public void simpleformdemoclick()
-	{
+	public void simpleformdemoclick(){
 		simpleform.click();
 	}
 	
-	public void checkboxclick()
-	{
+	public void checkboxclick(){
 		checkbox.click();
 	}
 	
-	public void radioclick()
-	{
+	public void radioclick(){
 		radiobutton.click();
 	}
 	
-	public void selectinputclick()
-	{
+	public void selectinputclick(){
 		selectinput.click();
 	}
-	public void   ajaxformsubmitclick()
-	{
+	public void ajaxformsubmitclick(){
 		ajaxformsubmit.click();
 	}
-	public void   formsubmitclick()
-	{
+	public void formsubmitclick(){
 		formsubmitlink.click();
 	}
 }
